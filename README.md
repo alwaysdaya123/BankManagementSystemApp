@@ -1,106 +1,80 @@
 # Bank Management System App
 
-## Overview
-The **Bank Management System App** is a Spring Boot REST API that provides CRUD operations for managing bank accounts. It leverages **Spring Data JPA**, **MySQL**, and **Postman** for API testing.
+## 🏦 Overview
+This is a **Spring Boot REST API** for performing CRUD operations on bank accounts using **Spring Data JPA**, **MySQL**, and **Postman** for testing.
 
-## Features
-- Create a new bank account
-- Retrieve account details by account number
-- Deposit money into an account
-- Withdraw money from an account
-- Get all bank accounts
-- Close (delete) an account
+## 📌 Features
+- **Create Account** ✅
+- **Get Account Details** 🧐
+- **Deposit Money** 💰
+- **Withdraw Money** 🏧
+- **Close Account** ❌
 
-## Technologies Used
-- **Spring Boot** (REST API development)
-- **Spring Data JPA** (Database operations)
-- **MySQL** (Database)
-- **Postman** (API testing)
-
-## Installation & Setup
-
-### Prerequisites
+## 🛠️ Technologies Used
 - **Java 17+**
 - **Spring Boot 3+**
+- **Spring Data JPA**
+- **Spring Web**
 - **MySQL Database**
-- **Maven**
+- **Postman (for API testing)**
+- **Lombok (for cleaner code)**
 
-### Steps to Run the Application
-1. **Clone the Repository:**
-   ```sh
-   git clone https://github.com/alwaysday123/BankManagementSystemApp.git
-   cd BankManagementSystemApp
-   ```
+## 🚀 Setup Instructions
 
-2. **Configure Database:**
-   Update `application.properties` in `src/main/resources` with your MySQL credentials:
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/bankdb
-   spring.datasource.username=root
-   spring.datasource.password=your_password
-   spring.jpa.hibernate.ddl-auto=update
-   ```
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/alwaysdaya123/BankManagementSystemApp.git
+cd BankManagementSystemApp
+```
 
-3. **Build & Run the Application:**
-   ```sh
-   mvn spring-boot:run
-   ```
+### 2️⃣ Configure MySQL Database
+Update `application.properties` in `src/main/resources/`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/bankdb
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
 
-## API Endpoints
+### 3️⃣ Build & Run the Application
+```sh
+mvn spring-boot:run
+```
 
-| HTTP Method | Endpoint                     | Description                 |
-|------------|-----------------------------|-----------------------------|
-| POST       | `/create`                    | Create a new bank account   |
-| GET        | `/getallaccounts`            | Retrieve all accounts       |
-| GET        | `/getaccount/{accountNumber}` | Retrieve an account by ID   |
-| PUT        | `/deposit/{accountNumber}/{amount}` | Deposit money into an account |
-| PUT        | `/withdraw/{accountNumber}/{amount}` | Withdraw money from an account |
-| DELETE     | `/close/{accountNumber}`     | Close an account            |
+## 🔥 API Endpoints
 
-## Example JSON Request
-
-### Create Account (`POST /create`)
+### 1️⃣ Create Account
+**POST** `/accounts/create`
 ```json
 {
     "accountNumber": 1001,
-    "account_balance": 5000.0
+    "accountHolderName": "Dayakar",
+    "accountBalance": 5000.0
 }
 ```
 
-### Deposit Money (`PUT /deposit/1001/1000`)
-**Response:**
-```json
-{
-    "accountNumber": 1001,
-    "account_balance": 6000.0
-}
-```
+### 2️⃣ Get Account Details
+**GET** `/accounts/{accountNumber}`
 
-### Withdraw Money (`PUT /withdraw/1001/500`)
-**Response:**
-```json
-{
-    "accountNumber": 1001,
-    "account_balance": 5500.0
-}
-```
+### 3️⃣ Deposit Money
+**PUT** `/accounts/deposit/{accountNumber}/{amount}`
 
-### Close Account (`DELETE /close/1001`)
-**Response:**
-```json
-{
-    "message": "Account with number 1001 has been closed successfully."
-}
-```
+### 4️⃣ Withdraw Money
+**PUT** `/accounts/withdraw/{accountNumber}/{amount}`
 
-## Testing with Postman
+### 5️⃣ Close Account
+**DELETE** `/accounts/close/{accountNumber}`
+
+## 🎯 Testing with Postman
 1. Open **Postman**.
-2. Use the given API endpoints to test CRUD operations.
-3. Send JSON payloads for `POST` and `PUT` requests.
+2. Use the API endpoints listed above.
+3. Verify the responses to ensure correctness.
 
-## License
+## 📜 License
 This project is licensed under the **MIT License**.
 
 ---
-**Author:** Dayakar | **GitHub:** [your-profile](https://github.com/alwaysdaya123)
+Author: Your Name | GitHub: your-profile
+💡 **Need help?** Feel free to raise an issue in the repository! 🚀
 
