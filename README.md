@@ -75,6 +75,6 @@ mvn spring-boot:run
 This project is licensed under the **MIT License**.
 
 ---
-Author: Your Name | GitHub: your-profile
+
 💡 **Need help?** Feel free to raise an issue in the repository! 🚀
 
